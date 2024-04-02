@@ -1,1 +1,21 @@
-<p>cd-list works!</p>
+<!-- cd-list.component.html -->
+
+<mat-table [dataSource]="cds">
+  <!-- Column definitions -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+    <mat-cell *matCellDef="let cd">{{ cd.title }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="artist">
+    <mat-header-cell *matHeaderCellDef>Artist</mat-header-cell>
+    <mat-cell *matCellDef="let cd">{{ cd.artist }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="genre">
+    <mat-header-cell *matHeaderCellDef>Genre</mat-header-cell>
+    <mat-cell *matCellDef="let cd">{{ cd.genre }}</mat-cell>
+  </ng-container>
+  <!-- Add more column definitions as needed -->
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,1 +1,9 @@
-<p>cd-details works!</p>
+<div *ngIf="cd">
+  <h2>{{ cd?.title }}</h2>
+  <p>Artist: {{ cd?.artist }}</p>
+  <p>Genre: {{ cd?.genre }}</p>
+  <p>Songs:</p>
+  <ul>
+    <li *ngFor="let song of cd.songs">{{ song }}</li>
+  </ul>
+</div>
